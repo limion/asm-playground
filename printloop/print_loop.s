@@ -11,7 +11,7 @@ _start:
 	stp		x29, x30, [sp, #-16]! 	// According to the "Procedure Call Standard for the Arm® 64-bit Architecture (AArch64)":
 									// ...Additionally, at any point at which memory is accessed via SP, the hardware requires that
 									// • SP mod 16 = 0. The stack must be quad-word aligned...
-									// According to the "Procedure Call Standard for the Arm® 64-bit Architecture (AArch64)":
+	mov		x29, sp					// According to the "Procedure Call Standard for the Arm® 64-bit Architecture (AArch64)":
 									// ...Conforming code shall construct a linked list of stack-frames. 
 									// Each frame shall link to the frame of its caller by means of a frame 
 									// record of two 64-bit values on the stack (independent of the data model)...	
@@ -46,6 +46,7 @@ loop:
 // x1 - length of the string
 print:
 	stp		x29, x30, [sp, #-16]!
+	mov		x29, sp
 	stp		x0, x1, [sp, #-16]!		// Preserve registers that are going to be used 
 	stp		x2, x16, [sp, #-16]!	// in the print function
 
