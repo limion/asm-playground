@@ -1,5 +1,5 @@
-// Assembly programm for the AArch64 (Mac OS) that prints
-// all capital letters of the English alphabet
+// An Assembly programm for the AArch64 (Mac OS) that prints 
+// all the capital letters of the English alphabet in a loop using "write" system call 
 //
 // X29 frame pointer register
 // X30 link register (return address)
